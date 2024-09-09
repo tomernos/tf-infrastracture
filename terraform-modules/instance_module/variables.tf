@@ -8,9 +8,10 @@ variable "instance_type" {
   type        = string
 }
 
-variable "availability_zone" {
-  description = "The availability zone to deploy the instance"
-  type        = string
+variable "tags" {
+  description = "tags"
+  type        = any
+  default = {}
 }
 
 variable "instance_name" {
@@ -28,4 +29,22 @@ variable "security_group_ids" {
   description = "A list of security group IDs to associate with the instance"
   type        = list(string)
   default     = []
+}
+
+variable "subnet_id" {
+  description = "The ID of the subnet to launch the instance into"
+  type        = string
+}
+
+
+variable "target_group_arn" {
+  description = "ARN of the target group to associate the instance with"
+  type        = string
+  default     = ""
+}
+
+variable "target_group_attachments" {
+  description = "Map of target group names to attach the instance to"
+  type        = map(string)
+  default     = {}
 }

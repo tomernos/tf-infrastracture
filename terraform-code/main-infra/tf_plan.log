@@ -1,0 +1,947 @@
+2024-08-16T13:34:02.494+0300 [INFO]  Terraform version: 1.9.4
+2024-08-16T13:34:02.495+0300 [DEBUG] using github.com/hashicorp/go-tfe v1.51.0
+2024-08-16T13:34:02.495+0300 [DEBUG] using github.com/hashicorp/hcl/v2 v2.20.0
+2024-08-16T13:34:02.495+0300 [DEBUG] using github.com/hashicorp/terraform-svchost v0.1.1
+2024-08-16T13:34:02.495+0300 [DEBUG] using github.com/zclconf/go-cty v1.14.4
+2024-08-16T13:34:02.495+0300 [INFO]  Go runtime version: go1.22.5
+2024-08-16T13:34:02.495+0300 [INFO]  CLI args: []string{"terraform", "plan"}
+2024-08-16T13:34:02.495+0300 [DEBUG] Attempting to open CLI config file: /home/tomer/.terraformrc
+2024-08-16T13:34:02.495+0300 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2024-08-16T13:34:02.495+0300 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2024-08-16T13:34:02.505+0300 [DEBUG] ignoring non-existing provider search directory /home/tomer/.terraform.d/plugins
+2024-08-16T13:34:02.505+0300 [DEBUG] ignoring non-existing provider search directory /home/tomer/.local/share/terraform/plugins
+2024-08-16T13:34:02.505+0300 [DEBUG] ignoring non-existing provider search directory /usr/local/share/terraform/plugins
+2024-08-16T13:34:02.505+0300 [DEBUG] ignoring non-existing provider search directory /usr/share/terraform/plugins
+2024-08-16T13:34:02.505+0300 [DEBUG] ignoring non-existing provider search directory /var/lib/snapd/desktop/terraform/plugins
+2024-08-16T13:34:02.506+0300 [INFO]  CLI command args: []string{"plan"}
+2024-08-16T13:34:02.521+0300 [DEBUG] backend-s3.aws-base: Resolving credentials provider: tf_backend.operation=Configure tf_backend.req_id=a71feb02-5337-5b50-7dac-f08764c32248 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.s3.path=tfstate/eastus/infra.tfstate
+2024-08-16T13:34:02.521+0300 [DEBUG] backend-s3.aws-base: Loading configuration: tf_backend.operation=Configure tf_backend.req_id=a71feb02-5337-5b50-7dac-f08764c32248 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.s3.path=tfstate/eastus/infra.tfstate
+2024-08-16T13:34:02.522+0300 [DEBUG] backend-s3.aws-base: Retrieving credentials: tf_backend.operation=Configure tf_backend.req_id=a71feb02-5337-5b50-7dac-f08764c32248 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.s3.path=tfstate/eastus/infra.tfstate
+2024-08-16T13:34:02.522+0300 [INFO]  backend-s3.aws-base: Retrieved credentials: tf_backend.operation=Configure tf_backend.req_id=a71feb02-5337-5b50-7dac-f08764c32248 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.s3.path=tfstate/eastus/infra.tfstate tf_aws.credentials_source="SharedConfigCredentials: /home/tomer/.aws/credentials"
+2024-08-16T13:34:02.522+0300 [DEBUG] backend-s3.aws-base: Loading configuration: tf_backend.operation=Configure tf_backend.req_id=a71feb02-5337-5b50-7dac-f08764c32248 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.s3.path=tfstate/eastus/infra.tfstate
+2024-08-16T13:34:02.522+0300 [DEBUG] backend-s3.aws-base: Retrieving caller identity from STS: tf_backend.operation=Configure tf_backend.req_id=a71feb02-5337-5b50-7dac-f08764c32248 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.s3.path=tfstate/eastus/infra.tfstate
+2024-08-16T13:34:02.522+0300 [DEBUG] backend-s3.aws-base: HTTP Request Sent: aws.region=us-east-1 rpc.method=GetCallerIdentity rpc.service=STS rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Configure tf_backend.req_id=a71feb02-5337-5b50-7dac-f08764c32248 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.s3.path=tfstate/eastus/infra.tfstate http.user_agent="APN/1.0 HashiCorp/1.0 Terraform/1.9.4 (+https://www.terraform.io) aws-sdk-go-v2/1.25.3 os/linux lang/go#1.22.5 md/GOOS#linux md/GOARCH#amd64 api/sts#1.28.4" http.request.header.amz_sdk_request="attempt=1; max=5" http.request.header.content_type=application/x-www-form-urlencoded http.method=POST http.url=https://sts.us-east-1.amazonaws.com/ http.request.header.authorization="AWS4-HMAC-SHA256 Credential=AKIA************RW7A/20240816/us-east-1/sts/aws4_request, SignedHeaders=amz-sdk-invocation-id;amz-sdk-request;content-length;content-type;host;x-amz-date, Signature=*****" http.request.header.x_amz_date=20240816T103402Z http.request.header.amz_sdk_invocation_id=884d352d-e147-4a7c-a25a-2675f2d36cd0
+  http.request.body=
+  | Action=GetCallerIdentity&Version=2011-06-15
+   net.peer.name=sts.us-east-1.amazonaws.com http.request_content_length=43
+2024-08-16T13:34:03.176+0300 [DEBUG] backend-s3.aws-base: HTTP Response Received: aws.region=us-east-1 rpc.method=GetCallerIdentity rpc.service=STS rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Configure tf_backend.req_id=a71feb02-5337-5b50-7dac-f08764c32248 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.s3.path=tfstate/eastus/infra.tfstate http.response.header.x_amzn_requestid=318aa4ed-84b1-4099-bbe8-7cbf12a4eb4e http.response.header.content_type=text/xml
+  http.response.body=
+  | <GetCallerIdentityResponse xmlns="https://sts.amazonaws.com/doc/2011-06-15/">
+  |   <GetCallerIdentityResult>
+  |     <Arn>arn:aws:iam::654654526828:root</Arn>
+  |     <UserId>654654526828</UserId>
+  |     <Account>654654526828</Account>
+  |   </GetCallerIdentityResult>
+  |   <ResponseMetadata>
+  |     <RequestId>318aa4ed-84b1-4099-bbe8-7cbf12a4eb4e</RequestId>
+  |   </ResponseMetadata>
+  | </GetCallerIdentityResponse>
+   http.duration=652 http.status_code=200 http.response_content_length=387 http.response.header.date="Fri, 16 Aug 2024 10:34:02 GMT"
+2024-08-16T13:34:03.176+0300 [INFO]  backend-s3.aws-base: Retrieved caller identity from STS: tf_backend.operation=Configure tf_backend.req_id=a71feb02-5337-5b50-7dac-f08764c32248 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.s3.path=tfstate/eastus/infra.tfstate
+2024-08-16T13:34:03.176+0300 [DEBUG] backend-s3.aws-base: Retrieving caller identity from STS: tf_backend.operation=Configure tf_backend.req_id=a71feb02-5337-5b50-7dac-f08764c32248 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.s3.path=tfstate/eastus/infra.tfstate
+2024-08-16T13:34:03.177+0300 [DEBUG] backend-s3.aws-base: HTTP Request Sent: aws.region=us-east-1 rpc.method=GetCallerIdentity rpc.service=STS rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Configure tf_backend.req_id=a71feb02-5337-5b50-7dac-f08764c32248 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.s3.path=tfstate/eastus/infra.tfstate http.request.header.authorization="AWS4-HMAC-SHA256 Credential=AKIA************RW7A/20240816/us-east-1/sts/aws4_request, SignedHeaders=amz-sdk-invocation-id;amz-sdk-request;content-length;content-type;host;x-amz-date, Signature=*****" http.request.header.amz_sdk_request="attempt=1; max=5" http.request.header.x_amz_date=20240816T103403Z http.url=https://sts.us-east-1.amazonaws.com/ net.peer.name=sts.us-east-1.amazonaws.com http.user_agent="APN/1.0 HashiCorp/1.0 Terraform/1.9.4 (+https://www.terraform.io) aws-sdk-go-v2/1.25.3 os/linux lang/go#1.22.5 md/GOOS#linux md/GOARCH#amd64 api/sts#1.28.4" http.request_content_length=43 http.method=POST http.request.header.amz_sdk_invocation_id=28c600d1-aba0-4dd3-b7b1-f2b32de2554d http.request.header.content_type=application/x-www-form-urlencoded
+  http.request.body=
+  | Action=GetCallerIdentity&Version=2011-06-15
+  
+2024-08-16T13:34:03.363+0300 [DEBUG] backend-s3.aws-base: HTTP Response Received: aws.region=us-east-1 rpc.method=GetCallerIdentity rpc.service=STS rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Configure tf_backend.req_id=a71feb02-5337-5b50-7dac-f08764c32248 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.s3.path=tfstate/eastus/infra.tfstate
+  http.response.body=
+  | <GetCallerIdentityResponse xmlns="https://sts.amazonaws.com/doc/2011-06-15/">
+  |   <GetCallerIdentityResult>
+  |     <Arn>arn:aws:iam::654654526828:root</Arn>
+  |     <UserId>654654526828</UserId>
+  |     <Account>654654526828</Account>
+  |   </GetCallerIdentityResult>
+  |   <ResponseMetadata>
+  |     <RequestId>cf54e7b0-e0c6-4dc7-b2e5-fcc159916c0b</RequestId>
+  |   </ResponseMetadata>
+  | </GetCallerIdentityResponse>
+   http.duration=185 http.status_code=200 http.response_content_length=387 http.response.header.x_amzn_requestid=cf54e7b0-e0c6-4dc7-b2e5-fcc159916c0b http.response.header.content_type=text/xml http.response.header.date="Fri, 16 Aug 2024 10:34:02 GMT"
+2024-08-16T13:34:03.363+0300 [INFO]  backend-s3.aws-base: Retrieved caller identity from STS: tf_backend.operation=Configure tf_backend.req_id=a71feb02-5337-5b50-7dac-f08764c32248 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.s3.path=tfstate/eastus/infra.tfstate
+2024-08-16T13:34:04.822+0300 [DEBUG] checking for provisioner in "."
+2024-08-16T13:34:04.833+0300 [DEBUG] checking for provisioner in "/usr/bin"
+2024-08-16T13:34:04.835+0300 [INFO]  backend/local: starting Plan operation
+2024-08-16T13:34:04.836+0300 [DEBUG] backend-s3: HTTP Request Sent: aws.region=us-east-1 aws.s3.bucket=tfsate-bucket-eastus rpc.method=ListObjectsV2 rpc.service=S3 rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Workspaces tf_backend.req_id=faed1fe2-ca8d-3fa1-8c61-61d2f748f0a8 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.workspace-prefix=env:/ http.request.header.x_amz_content_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 http.request.header.amz_sdk_invocation_id=013887b2-8666-4000-9cf4-8c6f015ef640 http.request.header.amz_sdk_request="attempt=1; max=5" http.request.header.x_amz_date=20240816T103404Z net.peer.name=tfsate-bucket-eastus.s3.us-east-1.amazonaws.com http.url="https://tfsate-bucket-eastus.s3.us-east-1.amazonaws.com/?list-type=2&max-keys=1000&prefix=env%3A%2F" http.user_agent="APN/1.0 HashiCorp/1.0 Terraform/1.9.4 (+https://www.terraform.io) aws-sdk-go-v2/1.25.3 os/linux lang/go#1.22.5 md/GOOS#linux md/GOARCH#amd64 api/s3#1.51.4" http.request.header.authorization="AWS4-HMAC-SHA256 Credential=AKIA************RW7A/20240816/us-east-1/s3/aws4_request, SignedHeaders=accept-encoding;amz-sdk-invocation-id;amz-sdk-request;host;x-amz-content-sha256;x-amz-date, Signature=*****" http.request.header.accept_encoding=identity http.request.body="" http.method=GET
+2024-08-16T13:34:05.556+0300 [DEBUG] backend-s3: HTTP Response Received: aws.region=us-east-1 aws.s3.bucket=tfsate-bucket-eastus rpc.method=ListObjectsV2 rpc.service=S3 rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Workspaces tf_backend.req_id=faed1fe2-ca8d-3fa1-8c61-61d2f748f0a8 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.workspace-prefix=env:/ http.response.header.x_amz_id_2="ahGXFY4K/tDSzsKvxZOHvWOJUGtf4CES5NxB+aNR8Shysjl3omxfbPuq5MoQ9SRqOBv9hLQJl4Q=" http.status_code=200 http.response.header.server=AmazonS3 http.response.header.date="Fri, 16 Aug 2024 10:34:06 GMT" http.response.header.x_amz_bucket_region=us-east-1 http.response.header.content_type=application/xml
+  http.response.body=
+  | <?xml version="1.0" encoding="UTF-8"?>
+  | <ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name>tfsate-bucket-eastus</Name><Prefix>env:/</Prefix><KeyCount>0</KeyCount><MaxKeys>1000</MaxKeys><IsTruncated>false</IsTruncated></ListBucketResult>
+   http.duration=720 http.response.header.x_amz_request_id=B3MS0N2KPKWN28GX
+2024-08-16T13:34:05.557+0300 [INFO]  backend-s3: Downloading remote state: tf_backend.operation=Get tf_backend.req_id=7fea7c1c-4103-f5e5-b010-65b15f78a785 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.s3.path=tfstate/eastus/infra.tfstate
+2024-08-16T13:34:05.557+0300 [DEBUG] backend-s3: HTTP Request Sent: aws.region=us-east-1 aws.s3.bucket=tfsate-bucket-eastus aws.s3.key=tfstate/eastus/infra.tfstate rpc.method=HeadObject rpc.service=S3 rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Get tf_backend.req_id=7fea7c1c-4103-f5e5-b010-65b15f78a785 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.s3.path=tfstate/eastus/infra.tfstate http.request.header.x_amz_date=20240816T103405Z http.request.header.amz_sdk_invocation_id=98bec883-aee9-445b-bc76-f99118c96af4 http.request.body="" http.method=HEAD net.peer.name=tfsate-bucket-eastus.s3.us-east-1.amazonaws.com http.user_agent="APN/1.0 HashiCorp/1.0 Terraform/1.9.4 (+https://www.terraform.io) aws-sdk-go-v2/1.25.3 os/linux lang/go#1.22.5 md/GOOS#linux md/GOARCH#amd64 api/s3#1.51.4" http.request.header.accept_encoding=identity http.url=https://tfsate-bucket-eastus.s3.us-east-1.amazonaws.com/tfstate/eastus/infra.tfstate http.request.header.authorization="AWS4-HMAC-SHA256 Credential=AKIA************RW7A/20240816/us-east-1/s3/aws4_request, SignedHeaders=accept-encoding;amz-sdk-invocation-id;amz-sdk-request;host;x-amz-content-sha256;x-amz-date, Signature=*****" http.request.header.x_amz_content_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 http.request.header.amz_sdk_request="attempt=1; max=5"
+2024-08-16T13:34:05.702+0300 [DEBUG] backend-s3: HTTP Response Received: aws.region=us-east-1 aws.s3.bucket=tfsate-bucket-eastus aws.s3.key=tfstate/eastus/infra.tfstate rpc.method=HeadObject rpc.service=S3 rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Get tf_backend.req_id=7fea7c1c-4103-f5e5-b010-65b15f78a785 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.s3.path=tfstate/eastus/infra.tfstate http.duration=145 http.response.header.accept_ranges=bytes http.response_content_length=181 http.response.header.content_encoding="" http.response.header.last_modified="Thu, 15 Aug 2024 14:08:34 GMT" http.response.header.x_amz_id_2="4t8ZxS37s5NI1r7EI4agvIvwigt+z9Rs78lmfnNz8bUiHEPiCQaV89E6Inb1E/20TvX6pLrAg0c=" http.response.header.content_type=application/json http.response.body="" http.status_code=200 http.response.header.x_amz_version_id=f56CFUSct9hYFkamXLVAmjp1EmP0GIoq http.response.header.x_amz_request_id=B3MS02CWFWGYA86K http.response.header.etag="\"0c0c34dc84661621b96ebc7855b06d80\"" http.response.header.x_amz_server_side_encryption=AES256 http.response.header.server=AmazonS3 http.response.header.date="Fri, 16 Aug 2024 10:34:06 GMT"
+2024-08-16T13:34:05.704+0300 [DEBUG] backend-s3: HTTP Request Sent: aws.region=us-east-1 aws.s3.bucket=tfsate-bucket-eastus aws.s3.key=tfstate/eastus/infra.tfstate rpc.method=GetObject rpc.service=S3 rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Get tf_backend.req_id=7fea7c1c-4103-f5e5-b010-65b15f78a785 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.s3.path=tfstate/eastus/infra.tfstate http.request.header.accept_encoding=identity http.request.header.amz_sdk_request="attempt=1; max=5" http.request.body="" net.peer.name=tfsate-bucket-eastus.s3.us-east-1.amazonaws.com http.request.header.authorization="AWS4-HMAC-SHA256 Credential=AKIA************RW7A/20240816/us-east-1/s3/aws4_request, SignedHeaders=accept-encoding;amz-sdk-invocation-id;amz-sdk-request;host;range;x-amz-content-sha256;x-amz-date, Signature=*****" http.request.header.x_amz_content_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 http.request.header.amz_sdk_invocation_id=e0b0cd33-4f32-4594-ab44-2c80078af0ae http.request.header.x_amz_date=20240816T103405Z http.method=GET http.url=https://tfsate-bucket-eastus.s3.us-east-1.amazonaws.com/tfstate/eastus/infra.tfstate?x-id=GetObject http.user_agent="APN/1.0 HashiCorp/1.0 Terraform/1.9.4 (+https://www.terraform.io) aws-sdk-go-v2/1.25.3 os/linux lang/go#1.22.5 md/GOOS#linux md/GOARCH#amd64 api/s3#1.51.4 ft/s3-transfer" http.request.header.range=bytes=0-5242879
+2024-08-16T13:34:05.864+0300 [DEBUG] backend-s3: HTTP Response Received: aws.region=us-east-1 aws.s3.bucket=tfsate-bucket-eastus aws.s3.key=tfstate/eastus/infra.tfstate rpc.method=GetObject rpc.service=S3 rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Get tf_backend.req_id=7fea7c1c-4103-f5e5-b010-65b15f78a785 tf_backend.s3.bucket=tfsate-bucket-eastus tf_backend.s3.path=tfstate/eastus/infra.tfstate http.response.header.x_amz_server_side_encryption=AES256 http.response.header.x_amz_version_id=f56CFUSct9hYFkamXLVAmjp1EmP0GIoq http.response.header.content_range="bytes 0-180/181" http.response.header.server=AmazonS3 http.duration=159 http.status_code=206 http.response_content_length=181 http.response.header.x_amz_id_2="FS7b7KW7IUxJMNN2LtDUtNZS7toj3XQcm0aekSopmOWaV0akM+Zd4slvkNyAUag8sdwEBkYIx10=" http.response.header.content_encoding="" http.response.header.content_type=application/json http.response.body="[Redacted: 181 bytes, Type: application/json]" http.response.header.last_modified="Thu, 15 Aug 2024 14:08:34 GMT" http.response.header.x_amz_request_id=B3MY3W10P43H6TQ3 http.response.header.accept_ranges=bytes http.response.header.etag="\"0c0c34dc84661621b96ebc7855b06d80\"" http.response.header.date="Fri, 16 Aug 2024 10:34:06 GMT"
+2024-08-16T13:34:05.871+0300 [DEBUG] created provider logger: level=debug
+2024-08-16T13:34:05.871+0300 [INFO]  provider: configuring client automatic mTLS
+2024-08-16T13:34:05.882+0300 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/aws/5.62.0/linux_amd64/terraform-provider-aws_v5.62.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/aws/5.62.0/linux_amd64/terraform-provider-aws_v5.62.0_x5"]
+2024-08-16T13:34:05.892+0300 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/aws/5.62.0/linux_amd64/terraform-provider-aws_v5.62.0_x5 pid=3337
+2024-08-16T13:34:05.893+0300 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/hashicorp/aws/5.62.0/linux_amd64/terraform-provider-aws_v5.62.0_x5
+2024-08-16T13:34:06.105+0300 [INFO]  provider.terraform-provider-aws_v5.62.0_x5: configuring server automatic mTLS: timestamp="2024-08-16T13:34:06.105+0300"
+2024-08-16T13:34:06.116+0300 [DEBUG] provider.terraform-provider-aws_v5.62.0_x5: plugin address: address=/tmp/plugin21498666 network=unix timestamp="2024-08-16T13:34:06.116+0300"
+2024-08-16T13:34:06.116+0300 [DEBUG] provider: using plugin: version=5
+2024-08-16T13:34:06.787+0300 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-08-16T13:34:06.799+0300 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/hashicorp/aws/5.62.0/linux_amd64/terraform-provider-aws_v5.62.0_x5 id=3337
+2024-08-16T13:34:06.810+0300 [DEBUG] provider: plugin exited
+2024-08-16T13:34:06.810+0300 [DEBUG] Building and walking validate graph
+2024-08-16T13:34:06.811+0300 [DEBUG] ProviderTransformer: "module.route_tables.aws_route_table_association.this" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-08-16T13:34:06.811+0300 [DEBUG] ProviderTransformer: "module.ec2_instances.aws_instance.this" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-08-16T13:34:06.811+0300 [DEBUG] ProviderTransformer: "module.security_group.aws_security_group.this" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-08-16T13:34:06.811+0300 [DEBUG] ProviderTransformer: "module.vpc.aws_vpc.this" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-08-16T13:34:06.811+0300 [DEBUG] ProviderTransformer: "module.vpc.aws_internet_gateway.this" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-08-16T13:34:06.811+0300 [DEBUG] ProviderTransformer: "module.route_tables.aws_route_table.this" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-08-16T13:34:06.811+0300 [DEBUG] ProviderTransformer: "module.subnets.aws_subnet.this" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-08-16T13:34:06.812+0300 [DEBUG] ReferenceTransformer: "module.vpc.var.cidr_block (expand)" references: [var.cidr_vpc]
+2024-08-16T13:34:06.812+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances.var.security_group_ids (expand)" references: [module.security_group.output.security_group_id (expand) module.security_group (expand) module.security_group (close)]
+2024-08-16T13:34:06.812+0300 [DEBUG] ReferenceTransformer: "module.route_tables.var.internet_gateway_id (expand)" references: [module.vpc.output.internet_gateway_id (expand)]
+2024-08-16T13:34:06.812+0300 [DEBUG] ReferenceTransformer: "module.security_group.var.sg_description (expand)" references: []
+2024-08-16T13:34:06.812+0300 [DEBUG] ReferenceTransformer: "module.vpc.output.vpc_id (expand)" references: [module.vpc.aws_vpc.this]
+2024-08-16T13:34:06.812+0300 [DEBUG] ReferenceTransformer: "module.vpc (expand)" references: []
+2024-08-16T13:34:06.812+0300 [DEBUG] ReferenceTransformer: "module.vpc (close)" references: []
+2024-08-16T13:34:06.812+0300 [DEBUG] ReferenceTransformer: "module.vpc.aws_internet_gateway.this" references: [module.vpc.var.vpc_name (expand) module.vpc.aws_vpc.this]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "var.ec2_config" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances (close)" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.subnets.aws_subnet.this" references: [module.subnets.var.subnet_name (expand) module.subnets.var.map_public_ip_on_launch (expand) module.subnets.var.cidr_block (expand) module.subnets.var.vpc_id (expand) module.subnets.var.availability_zone (expand)]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "var.cidr_vpc" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.security_group.var.egress_rules (expand)" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.route_tables.output.route_table_id (expand)" references: [module.route_tables.aws_route_table.this]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.security_group.output.security_group_id (expand)" references: [module.security_group.aws_security_group.this]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.route_tables.aws_route_table_association.this" references: [module.route_tables.var.subnet_ids (expand) module.route_tables.aws_route_table.this]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "var.vpc_name" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.subnets (close)" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.route_tables (close)" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/aws\"]" references: [var.aws_region]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.security_group.var.sg_name (expand)" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.security_group.var.ingress_rules (expand)" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.security_group (expand)" references: [var.SecurityGroups]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances.aws_instance.this" references: [module.ec2_instances.var.security_group_ids (expand) module.ec2_instances.var.instance_type (expand) module.ec2_instances.var.instance_name (expand) module.ec2_instances.var.environment (expand) module.ec2_instances.var.ami_id (expand) module.ec2_instances.var.subnet_id (expand)]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.subnets.var.cidr_block (expand)" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.vpc.output.internet_gateway_id (expand)" references: [module.vpc.aws_internet_gateway.this]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.security_group (close)" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.vpc.var.vpc_name (expand)" references: [var.vpc_name]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances.var.ami_id (expand)" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.route_tables.var.vpc_id (expand)" references: [module.vpc.output.vpc_id (expand)]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.security_group.var.vpc_id (expand)" references: [module.vpc.output.vpc_id (expand)]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.subnets.var.subnet_name (expand)" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.subnets.var.map_public_ip_on_launch (expand)" references: [var.public_subnets]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances.output.instance_id (expand)" references: [module.ec2_instances.aws_instance.this]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.subnets.output.subnet_id (expand)" references: [module.subnets.aws_subnet.this]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.vpc.aws_vpc.this" references: [module.vpc.var.cidr_block (expand) module.vpc.var.vpc_name (expand)]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "var.SecurityGroups" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "var.aws_region" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "var.public_subnets" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances (expand)" references: [var.ec2_config]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.route_tables.aws_route_table.this" references: [module.route_tables.var.vpc_id (expand) module.route_tables.var.route_table_name (expand) module.route_tables.var.routes (expand) module.route_tables.var.internet_gateway_id (expand)]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "var.private_subnets" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances.var.subnet_id (expand)" references: [module.subnets (close) module.subnets.output.subnet_id (expand) module.subnets (expand)]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "var.route_tables" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances.var.instance_type (expand)" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.subnets (expand)" references: [var.public_subnets var.private_subnets]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.route_tables (expand)" references: [module.subnets (close) module.subnets.output.subnet_id (expand) module.subnets (expand) var.route_tables]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances.var.instance_name (expand)" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.subnets.var.availability_zone (expand)" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.route_tables.var.routes (expand)" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.subnets.var.vpc_id (expand)" references: [module.vpc.output.vpc_id (expand)]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.route_tables.var.route_table_name (expand)" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances.var.environment (expand)" references: []
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.route_tables.var.subnet_ids (expand)" references: [module.subnets (close) module.subnets.output.subnet_id (expand) module.subnets (expand)]
+2024-08-16T13:34:06.813+0300 [DEBUG] ReferenceTransformer: "module.security_group.aws_security_group.this" references: [module.security_group.var.sg_description (expand) module.security_group.var.sg_name (expand) module.security_group.var.vpc_id (expand) module.security_group.var.sg_name (expand) module.security_group.var.ingress_rules (expand) module.security_group.var.egress_rules (expand)]
+2024-08-16T13:34:06.815+0300 [DEBUG] Starting graph walk: walkValidate
+2024-08-16T13:34:06.816+0300 [DEBUG] created provider logger: level=debug
+2024-08-16T13:34:06.816+0300 [INFO]  provider: configuring client automatic mTLS
+2024-08-16T13:34:06.821+0300 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/aws/5.62.0/linux_amd64/terraform-provider-aws_v5.62.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/aws/5.62.0/linux_amd64/terraform-provider-aws_v5.62.0_x5"]
+2024-08-16T13:34:06.830+0300 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/aws/5.62.0/linux_amd64/terraform-provider-aws_v5.62.0_x5 pid=3356
+2024-08-16T13:34:06.831+0300 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/hashicorp/aws/5.62.0/linux_amd64/terraform-provider-aws_v5.62.0_x5
+2024-08-16T13:34:07.069+0300 [INFO]  provider.terraform-provider-aws_v5.62.0_x5: configuring server automatic mTLS: timestamp="2024-08-16T13:34:07.069+0300"
+2024-08-16T13:34:07.080+0300 [DEBUG] provider.terraform-provider-aws_v5.62.0_x5: plugin address: address=/tmp/plugin4274430641 network=unix timestamp="2024-08-16T13:34:07.080+0300"
+2024-08-16T13:34:07.080+0300 [DEBUG] provider: using plugin: version=5
+2024-08-16T13:34:07.185+0300 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-08-16T13:34:07.197+0300 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/hashicorp/aws/5.62.0/linux_amd64/terraform-provider-aws_v5.62.0_x5 id=3356
+2024-08-16T13:34:07.198+0300 [DEBUG] provider: plugin exited
+2024-08-16T13:34:07.198+0300 [INFO]  backend/local: plan calling Plan
+2024-08-16T13:34:07.198+0300 [DEBUG] Building and walking plan graph for NormalMode
+2024-08-16T13:34:07.199+0300 [DEBUG] ProviderTransformer: "module.subnets.aws_subnet.this (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-08-16T13:34:07.199+0300 [DEBUG] ProviderTransformer: "module.vpc.aws_vpc.this (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-08-16T13:34:07.199+0300 [DEBUG] ProviderTransformer: "module.vpc.aws_internet_gateway.this (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-08-16T13:34:07.199+0300 [DEBUG] ProviderTransformer: "module.ec2_instances.aws_instance.this (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-08-16T13:34:07.199+0300 [DEBUG] ProviderTransformer: "module.route_tables.aws_route_table_association.this (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-08-16T13:34:07.199+0300 [DEBUG] ProviderTransformer: "module.route_tables.aws_route_table.this (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-08-16T13:34:07.199+0300 [DEBUG] ProviderTransformer: "module.security_group.aws_security_group.this (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.route_tables.var.route_table_name (expand)" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.vpc.output.vpc_id (expand)" references: [module.vpc.aws_vpc.this (expand)]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.security_group.output.security_group_id (expand)" references: [module.security_group.aws_security_group.this (expand)]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.subnets.output.subnet_id (expand)" references: [module.subnets.aws_subnet.this (expand)]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.security_group (expand)" references: [var.SecurityGroups]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.route_tables.aws_route_table.this (expand)" references: [module.route_tables.var.route_table_name (expand) module.route_tables.var.vpc_id (expand) module.route_tables.var.routes (expand) module.route_tables.var.internet_gateway_id (expand)]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "var.SecurityGroups" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.subnets.var.subnet_name (expand)" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.security_group (close)" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.security_group.var.ingress_rules (expand)" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances.var.instance_type (expand)" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances (expand)" references: [var.ec2_config]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.route_tables (close)" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.security_group.aws_security_group.this (expand)" references: [module.security_group.var.sg_name (expand) module.security_group.var.sg_description (expand) module.security_group.var.sg_name (expand) module.security_group.var.vpc_id (expand) module.security_group.var.ingress_rules (expand) module.security_group.var.egress_rules (expand)]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.route_tables.var.subnet_ids (expand)" references: [module.subnets.output.subnet_id (expand) module.subnets (close) module.subnets (expand)]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.route_tables.var.internet_gateway_id (expand)" references: [module.vpc.output.internet_gateway_id (expand)]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.security_group.var.sg_name (expand)" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.subnets.var.availability_zone (expand)" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.vpc.var.cidr_block (expand)" references: [var.cidr_vpc]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.route_tables (expand)" references: [module.subnets.output.subnet_id (expand) module.subnets (close) module.subnets (expand) var.route_tables]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.subnets.var.map_public_ip_on_launch (expand)" references: [var.public_subnets]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances.var.security_group_ids (expand)" references: [module.security_group.output.security_group_id (expand) module.security_group (expand) module.security_group (close)]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "var.vpc_name" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "var.cidr_vpc" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.security_group.var.egress_rules (expand)" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances.var.environment (expand)" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "var.private_subnets" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.security_group.var.sg_description (expand)" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances.var.ami_id (expand)" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.vpc (expand)" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "var.route_tables" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.route_tables.output.route_table_id (expand)" references: [module.route_tables.aws_route_table.this (expand)]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.subnets (close)" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.vpc (close)" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.security_group.var.vpc_id (expand)" references: [module.vpc.output.vpc_id (expand)]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.subnets.var.vpc_id (expand)" references: [module.vpc.output.vpc_id (expand)]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.vpc.var.vpc_name (expand)" references: [var.vpc_name]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances.output.instance_id (expand)" references: [module.ec2_instances.aws_instance.this (expand)]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.subnets (expand)" references: [var.public_subnets var.private_subnets]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.vpc.output.internet_gateway_id (expand)" references: [module.vpc.aws_internet_gateway.this (expand)]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "var.ec2_config" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.subnets.var.cidr_block (expand)" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/aws\"]" references: [var.aws_region]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances (close)" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.subnets.aws_subnet.this (expand)" references: [module.subnets.var.subnet_name (expand) module.subnets.var.map_public_ip_on_launch (expand) module.subnets.var.cidr_block (expand) module.subnets.var.vpc_id (expand) module.subnets.var.availability_zone (expand)]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.vpc.aws_vpc.this (expand)" references: [module.vpc.var.cidr_block (expand) module.vpc.var.vpc_name (expand)]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "var.aws_region" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.route_tables.var.routes (expand)" references: []
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances.var.subnet_id (expand)" references: [module.subnets.output.subnet_id (expand) module.subnets (close) module.subnets (expand)]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.vpc.aws_internet_gateway.this (expand)" references: [module.vpc.var.vpc_name (expand) module.vpc.aws_vpc.this (expand)]
+2024-08-16T13:34:07.200+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances.var.instance_name (expand)" references: []
+2024-08-16T13:34:07.201+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances.aws_instance.this (expand)" references: [module.ec2_instances.var.subnet_id (expand) module.ec2_instances.var.security_group_ids (expand) module.ec2_instances.var.instance_type (expand) module.ec2_instances.var.instance_name (expand) module.ec2_instances.var.environment (expand) module.ec2_instances.var.ami_id (expand)]
+2024-08-16T13:34:07.201+0300 [DEBUG] ReferenceTransformer: "module.route_tables.aws_route_table_association.this (expand)" references: [module.route_tables.var.subnet_ids (expand) module.route_tables.aws_route_table.this (expand)]
+2024-08-16T13:34:07.201+0300 [DEBUG] ReferenceTransformer: "var.public_subnets" references: []
+2024-08-16T13:34:07.201+0300 [DEBUG] ReferenceTransformer: "module.route_tables.var.vpc_id (expand)" references: [module.vpc.output.vpc_id (expand)]
+2024-08-16T13:34:07.203+0300 [DEBUG] Starting graph walk: walkPlan
+2024-08-16T13:34:07.203+0300 [DEBUG] created provider logger: level=debug
+2024-08-16T13:34:07.203+0300 [INFO]  provider: configuring client automatic mTLS
+2024-08-16T13:34:07.208+0300 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/aws/5.62.0/linux_amd64/terraform-provider-aws_v5.62.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/aws/5.62.0/linux_amd64/terraform-provider-aws_v5.62.0_x5"]
+2024-08-16T13:34:07.221+0300 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/aws/5.62.0/linux_amd64/terraform-provider-aws_v5.62.0_x5 pid=3373
+2024-08-16T13:34:07.221+0300 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/hashicorp/aws/5.62.0/linux_amd64/terraform-provider-aws_v5.62.0_x5
+2024-08-16T13:34:07.433+0300 [INFO]  provider.terraform-provider-aws_v5.62.0_x5: configuring server automatic mTLS: timestamp="2024-08-16T13:34:07.433+0300"
+2024-08-16T13:34:07.444+0300 [DEBUG] provider.terraform-provider-aws_v5.62.0_x5: plugin address: address=/tmp/plugin898140588 network=unix timestamp="2024-08-16T13:34:07.444+0300"
+2024-08-16T13:34:07.444+0300 [DEBUG] provider: using plugin: version=5
+2024-08-16T13:34:07.528+0300 [DEBUG] provider.terraform-provider-aws_v5.62.0_x5: Configuring Terraform AWS Provider: @module=aws tf_req_id=44a47eb3-5e47-956a-3241-b8eed0afb7fe tf_provider_addr=registry.terraform.io/hashicorp/aws tf_rpc=ConfigureProvider @caller=github.com/hashicorp/terraform-provider-aws/internal/conns/config.go:147 tf_mux_provider="*schema.GRPCProviderServer" timestamp="2024-08-16T13:34:07.528+0300"
+2024-08-16T13:34:07.529+0300 [DEBUG] provider.terraform-provider-aws_v5.62.0_x5: Resolving credentials provider: @module=aws.aws-base tf_mux_provider="*schema.GRPCProviderServer" tf_req_id=44a47eb3-5e47-956a-3241-b8eed0afb7fe tf_rpc=ConfigureProvider @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.54/logging/tf_logger.go:47 tf_provider_addr=registry.terraform.io/hashicorp/aws timestamp="2024-08-16T13:34:07.528+0300"
+2024-08-16T13:34:07.529+0300 [DEBUG] provider.terraform-provider-aws_v5.62.0_x5: Loading configuration: @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.54/logging/tf_logger.go:47 tf_mux_provider="*schema.GRPCProviderServer" tf_provider_addr=registry.terraform.io/hashicorp/aws tf_rpc=ConfigureProvider @module=aws.aws-base tf_req_id=44a47eb3-5e47-956a-3241-b8eed0afb7fe timestamp="2024-08-16T13:34:07.529+0300"
+2024-08-16T13:34:07.529+0300 [DEBUG] provider.terraform-provider-aws_v5.62.0_x5: Retrieving credentials: tf_mux_provider="*schema.GRPCProviderServer" tf_provider_addr=registry.terraform.io/hashicorp/aws tf_req_id=44a47eb3-5e47-956a-3241-b8eed0afb7fe tf_rpc=ConfigureProvider @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.54/logging/tf_logger.go:47 @module=aws.aws-base timestamp="2024-08-16T13:34:07.529+0300"
+2024-08-16T13:34:07.529+0300 [INFO]  provider.terraform-provider-aws_v5.62.0_x5: Retrieved credentials: tf_provider_addr=registry.terraform.io/hashicorp/aws @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.54/logging/tf_logger.go:39 @module=aws.aws-base tf_mux_provider="*schema.GRPCProviderServer" tf_req_id=44a47eb3-5e47-956a-3241-b8eed0afb7fe tf_rpc=ConfigureProvider tf_aws.credentials_source="SharedConfigCredentials: /home/tomer/.aws/credentials" timestamp="2024-08-16T13:34:07.529+0300"
+2024-08-16T13:34:07.529+0300 [DEBUG] provider.terraform-provider-aws_v5.62.0_x5: Loading configuration: @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.54/logging/tf_logger.go:47 tf_mux_provider="*schema.GRPCProviderServer" tf_req_id=44a47eb3-5e47-956a-3241-b8eed0afb7fe tf_rpc=ConfigureProvider tf_provider_addr=registry.terraform.io/hashicorp/aws @module=aws.aws-base timestamp="2024-08-16T13:34:07.529+0300"
+2024-08-16T13:34:07.529+0300 [DEBUG] provider.terraform-provider-aws_v5.62.0_x5: Creating AWS SDK v1 session: tf_mux_provider="*schema.GRPCProviderServer" tf_req_id=44a47eb3-5e47-956a-3241-b8eed0afb7fe tf_rpc=ConfigureProvider @module=aws @caller=github.com/hashicorp/terraform-provider-aws/internal/conns/config.go:171 tf_provider_addr=registry.terraform.io/hashicorp/aws timestamp="2024-08-16T13:34:07.529+0300"
+2024-08-16T13:34:07.530+0300 [DEBUG] provider.terraform-provider-aws_v5.62.0_x5: Retrieving AWS account details: tf_provider_addr=registry.terraform.io/hashicorp/aws tf_rpc=ConfigureProvider tf_mux_provider="*schema.GRPCProviderServer" tf_req_id=44a47eb3-5e47-956a-3241-b8eed0afb7fe @caller=github.com/hashicorp/terraform-provider-aws/internal/conns/config.go:186 @module=aws timestamp="2024-08-16T13:34:07.530+0300"
+2024-08-16T13:34:07.530+0300 [DEBUG] provider.terraform-provider-aws_v5.62.0_x5: Retrieving caller identity from STS: tf_mux_provider="*schema.GRPCProviderServer" @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.54/logging/tf_logger.go:47 @module=aws.aws-base tf_provider_addr=registry.terraform.io/hashicorp/aws tf_req_id=44a47eb3-5e47-956a-3241-b8eed0afb7fe tf_rpc=ConfigureProvider timestamp="2024-08-16T13:34:07.530+0300"
+2024-08-16T13:34:07.531+0300 [DEBUG] provider.terraform-provider-aws_v5.62.0_x5: HTTP Request Sent: tf_mux_provider="*schema.GRPCProviderServer" tf_rpc=ConfigureProvider @module=aws.aws-base http.method=POST http.request.header.amz_sdk_request="attempt=1; max=25" http.request.header.authorization="AWS4-HMAC-SHA256 Credential=AKIA************RW7A/20240816/us-east-1/sts/aws4_request, SignedHeaders=amz-sdk-invocation-id;amz-sdk-request;content-length;content-type;host;x-amz-date, Signature=*****" http.request.header.x_amz_date=20240816T103407Z @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.54/logging/tf_logger.go:47 aws.region=us-east-1 http.request_content_length=43 rpc.service=STS rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 http.request.header.content_type=application/x-www-form-urlencoded http.user_agent="APN/1.0 HashiCorp/1.0 Terraform/1.9.4 (+https://www.terraform.io) terraform-provider-aws/5.62.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go-v2/1.30.3 os/linux lang/go#1.22.6 md/GOOS#linux md/GOARCH#amd64 api/sts#1.30.3" net.peer.name=sts.us-east-1.amazonaws.com tf_provider_addr=registry.terraform.io/hashicorp/aws tf_req_id=44a47eb3-5e47-956a-3241-b8eed0afb7fe
+  http.request.body=
+  | Action=GetCallerIdentity&Version=2011-06-15
+   http.request.header.amz_sdk_invocation_id=62cd4676-018a-471b-8cb0-18d1b1f10e0f http.url=https://sts.us-east-1.amazonaws.com/ rpc.method=GetCallerIdentity tf_aws.signing_region="" timestamp="2024-08-16T13:34:07.530+0300"
+2024-08-16T13:34:08.391+0300 [DEBUG] provider.terraform-provider-aws_v5.62.0_x5: HTTP Response Received: @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.54/logging/tf_logger.go:47 rpc.system=aws-api tf_provider_addr=registry.terraform.io/hashicorp/aws tf_mux_provider="*schema.GRPCProviderServer" @module=aws.aws-base http.status_code=200 tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" http.duration=859 http.response.header.x_amzn_requestid=a709d619-ad8c-4e7c-917d-a26cf7596012 rpc.service=STS tf_rpc=ConfigureProvider http.response_content_length=387 rpc.method=GetCallerIdentity tf_req_id=44a47eb3-5e47-956a-3241-b8eed0afb7fe aws.region=us-east-1
+  http.response.body=
+  | <GetCallerIdentityResponse xmlns="https://sts.amazonaws.com/doc/2011-06-15/">
+  |   <GetCallerIdentityResult>
+  |     <Arn>arn:aws:iam::654654526828:root</Arn>
+  |     <UserId>654654526828</UserId>
+  |     <Account>654654526828</Account>
+  |   </GetCallerIdentityResult>
+  |   <ResponseMetadata>
+  |     <RequestId>a709d619-ad8c-4e7c-917d-a26cf7596012</RequestId>
+  |   </ResponseMetadata>
+  | </GetCallerIdentityResponse>
+   http.response.header.content_type=text/xml http.response.header.date="Fri, 16 Aug 2024 10:34:07 GMT" timestamp="2024-08-16T13:34:08.390+0300"
+2024-08-16T13:34:08.391+0300 [INFO]  provider.terraform-provider-aws_v5.62.0_x5: Retrieved caller identity from STS: tf_rpc=ConfigureProvider tf_req_id=44a47eb3-5e47-956a-3241-b8eed0afb7fe @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.54/logging/tf_logger.go:39 @module=aws.aws-base tf_mux_provider="*schema.GRPCProviderServer" tf_provider_addr=registry.terraform.io/hashicorp/aws timestamp="2024-08-16T13:34:08.391+0300"
+2024-08-16T13:34:08.394+0300 [DEBUG] Resource instance state not found for node "module.vpc.aws_vpc.this", instance module.vpc.aws_vpc.this
+2024-08-16T13:34:08.395+0300 [DEBUG] ReferenceTransformer: "module.vpc.aws_vpc.this" references: []
+2024-08-16T13:34:08.395+0300 [DEBUG] refresh: module.vpc.aws_vpc.this: no state, so not refreshing
+2024-08-16T13:34:08.409+0300 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.vpc.aws_vpc.this, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .instance_tenancy: planned value cty.StringVal("default") for a non-computed attribute
+2024-08-16T13:34:08.409+0300 [DEBUG] Resource instance state not found for node "module.vpc.aws_internet_gateway.this", instance module.vpc.aws_internet_gateway.this
+2024-08-16T13:34:08.409+0300 [DEBUG] ReferenceTransformer: "module.vpc.aws_internet_gateway.this" references: []
+2024-08-16T13:34:08.410+0300 [DEBUG] refresh: module.vpc.aws_internet_gateway.this: no state, so not refreshing
+2024-08-16T13:34:08.410+0300 [DEBUG] Resource instance state not found for node "module.subnets[\"Private-Subnet-1\"].aws_subnet.this", instance module.subnets["Private-Subnet-1"].aws_subnet.this
+2024-08-16T13:34:08.410+0300 [DEBUG] ReferenceTransformer: "module.subnets[\"Private-Subnet-1\"].aws_subnet.this" references: []
+2024-08-16T13:34:08.410+0300 [DEBUG] Resource instance state not found for node "module.subnets[\"Private-Subnet-2\"].aws_subnet.this", instance module.subnets["Private-Subnet-2"].aws_subnet.this
+2024-08-16T13:34:08.410+0300 [DEBUG] ReferenceTransformer: "module.subnets[\"Private-Subnet-2\"].aws_subnet.this" references: []
+2024-08-16T13:34:08.410+0300 [DEBUG] Resource instance state not found for node "module.subnets[\"Public-Subnet-1\"].aws_subnet.this", instance module.subnets["Public-Subnet-1"].aws_subnet.this
+2024-08-16T13:34:08.410+0300 [DEBUG] ReferenceTransformer: "module.subnets[\"Public-Subnet-1\"].aws_subnet.this" references: []
+2024-08-16T13:34:08.410+0300 [DEBUG] Resource instance state not found for node "module.subnets[\"Public-Subnet-2\"].aws_subnet.this", instance module.subnets["Public-Subnet-2"].aws_subnet.this
+2024-08-16T13:34:08.411+0300 [DEBUG] ReferenceTransformer: "module.subnets[\"Public-Subnet-2\"].aws_subnet.this" references: []
+2024-08-16T13:34:08.411+0300 [DEBUG] refresh: module.subnets["Private-Subnet-1"].aws_subnet.this: no state, so not refreshing
+2024-08-16T13:34:08.411+0300 [DEBUG] Resource instance state not found for node "module.security_group[\"allow_tls_ipv4\"].aws_security_group.this", instance module.security_group["allow_tls_ipv4"].aws_security_group.this
+2024-08-16T13:34:08.411+0300 [DEBUG] ReferenceTransformer: "module.security_group[\"allow_tls_ipv4\"].aws_security_group.this" references: []
+2024-08-16T13:34:08.411+0300 [DEBUG] refresh: module.subnets["Private-Subnet-2"].aws_subnet.this: no state, so not refreshing
+2024-08-16T13:34:08.412+0300 [DEBUG] refresh: module.subnets["Public-Subnet-2"].aws_subnet.this: no state, so not refreshing
+2024-08-16T13:34:08.412+0300 [DEBUG] refresh: module.subnets["Public-Subnet-1"].aws_subnet.this: no state, so not refreshing
+2024-08-16T13:34:08.412+0300 [DEBUG] Resource instance state not found for node "module.security_group[\"allow_tls_ipv4-2\"].aws_security_group.this", instance module.security_group["allow_tls_ipv4-2"].aws_security_group.this
+2024-08-16T13:34:08.412+0300 [DEBUG] ReferenceTransformer: "module.security_group[\"allow_tls_ipv4-2\"].aws_security_group.this" references: []
+2024-08-16T13:34:08.412+0300 [DEBUG] refresh: module.security_group["allow_tls_ipv4"].aws_security_group.this: no state, so not refreshing
+2024-08-16T13:34:08.413+0300 [DEBUG] refresh: module.security_group["allow_tls_ipv4-2"].aws_security_group.this: no state, so not refreshing
+2024-08-16T13:34:08.414+0300 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.subnets["Private-Subnet-1"].aws_subnet.this, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .enable_resource_name_dns_a_record_on_launch: planned value cty.False for a non-computed attribute
+      - .assign_ipv6_address_on_creation: planned value cty.False for a non-computed attribute
+      - .ipv6_native: planned value cty.False for a non-computed attribute
+      - .enable_dns64: planned value cty.False for a non-computed attribute
+      - .enable_resource_name_dns_aaaa_record_on_launch: planned value cty.False for a non-computed attribute
+2024-08-16T13:34:08.424+0300 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.subnets["Private-Subnet-2"].aws_subnet.this, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .enable_resource_name_dns_a_record_on_launch: planned value cty.False for a non-computed attribute
+      - .assign_ipv6_address_on_creation: planned value cty.False for a non-computed attribute
+      - .ipv6_native: planned value cty.False for a non-computed attribute
+      - .enable_dns64: planned value cty.False for a non-computed attribute
+      - .enable_resource_name_dns_aaaa_record_on_launch: planned value cty.False for a non-computed attribute
+2024-08-16T13:34:08.424+0300 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.subnets["Public-Subnet-2"].aws_subnet.this, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .enable_resource_name_dns_a_record_on_launch: planned value cty.False for a non-computed attribute
+      - .assign_ipv6_address_on_creation: planned value cty.False for a non-computed attribute
+      - .ipv6_native: planned value cty.False for a non-computed attribute
+      - .enable_dns64: planned value cty.False for a non-computed attribute
+      - .enable_resource_name_dns_aaaa_record_on_launch: planned value cty.False for a non-computed attribute
+2024-08-16T13:34:08.424+0300 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.subnets["Public-Subnet-1"].aws_subnet.this, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .enable_dns64: planned value cty.False for a non-computed attribute
+      - .enable_resource_name_dns_aaaa_record_on_launch: planned value cty.False for a non-computed attribute
+      - .enable_resource_name_dns_a_record_on_launch: planned value cty.False for a non-computed attribute
+      - .ipv6_native: planned value cty.False for a non-computed attribute
+      - .assign_ipv6_address_on_creation: planned value cty.False for a non-computed attribute
+2024-08-16T13:34:08.425+0300 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.security_group["allow_tls_ipv4-2"].aws_security_group.this, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .egress: planned value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("10.0.0.0/16")}), "description":cty.StringVal(""), "from_port":cty.NumberIntVal(5432), "ipv6_cidr_blocks":cty.ListValEmpty(cty.String), "prefix_list_ids":cty.ListValEmpty(cty.String), "protocol":cty.StringVal("tcp"), "security_groups":cty.SetValEmpty(cty.String), "self":cty.False, "to_port":cty.NumberIntVal(5432)})}) does not match config value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("10.0.0.0/16")}), "description":cty.NullVal(cty.String), "from_port":cty.NumberIntVal(5432), "ipv6_cidr_blocks":cty.NullVal(cty.List(cty.String)), "prefix_list_ids":cty.NullVal(cty.List(cty.String)), "protocol":cty.StringVal("tcp"), "security_groups":cty.NullVal(cty.Set(cty.String)), "self":cty.NullVal(cty.Bool), "to_port":cty.NumberIntVal(5432)})})
+      - .ingress: planned value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("10.0.0.0/16")}), "description":cty.StringVal(""), "from_port":cty.NumberIntVal(5432), "ipv6_cidr_blocks":cty.ListValEmpty(cty.String), "prefix_list_ids":cty.ListValEmpty(cty.String), "protocol":cty.StringVal("tcp"), "security_groups":cty.SetValEmpty(cty.String), "self":cty.False, "to_port":cty.NumberIntVal(5432)})}) does not match config value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("10.0.0.0/16")}), "description":cty.NullVal(cty.String), "from_port":cty.NumberIntVal(5432), "ipv6_cidr_blocks":cty.NullVal(cty.List(cty.String)), "prefix_list_ids":cty.NullVal(cty.List(cty.String)), "protocol":cty.StringVal("tcp"), "security_groups":cty.NullVal(cty.Set(cty.String)), "self":cty.NullVal(cty.Bool), "to_port":cty.NumberIntVal(5432)})})
+      - .revoke_rules_on_delete: planned value cty.False for a non-computed attribute
+2024-08-16T13:34:08.425+0300 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.security_group["allow_tls_ipv4"].aws_security_group.this, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .egress: planned value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("0.0.0.0/0")}), "description":cty.StringVal(""), "from_port":cty.NumberIntVal(0), "ipv6_cidr_blocks":cty.ListValEmpty(cty.String), "prefix_list_ids":cty.ListValEmpty(cty.String), "protocol":cty.StringVal("-1"), "security_groups":cty.SetValEmpty(cty.String), "self":cty.False, "to_port":cty.NumberIntVal(0)})}) does not match config value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("0.0.0.0/0")}), "description":cty.NullVal(cty.String), "from_port":cty.NumberIntVal(0), "ipv6_cidr_blocks":cty.NullVal(cty.List(cty.String)), "prefix_list_ids":cty.NullVal(cty.List(cty.String)), "protocol":cty.StringVal("-1"), "security_groups":cty.NullVal(cty.Set(cty.String)), "self":cty.NullVal(cty.Bool), "to_port":cty.NumberIntVal(0)})})
+      - .ingress: planned value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("0.0.0.0/0")}), "description":cty.StringVal(""), "from_port":cty.NumberIntVal(22), "ipv6_cidr_blocks":cty.ListValEmpty(cty.String), "prefix_list_ids":cty.ListValEmpty(cty.String), "protocol":cty.StringVal("tcp"), "security_groups":cty.SetValEmpty(cty.String), "self":cty.False, "to_port":cty.NumberIntVal(22)})}) does not match config value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("0.0.0.0/0")}), "description":cty.NullVal(cty.String), "from_port":cty.NumberIntVal(22), "ipv6_cidr_blocks":cty.NullVal(cty.List(cty.String)), "prefix_list_ids":cty.NullVal(cty.List(cty.String)), "protocol":cty.StringVal("tcp"), "security_groups":cty.NullVal(cty.Set(cty.String)), "self":cty.NullVal(cty.Bool), "to_port":cty.NumberIntVal(22)})})
+      - .revoke_rules_on_delete: planned value cty.False for a non-computed attribute
+2024-08-16T13:34:08.427+0300 [DEBUG] Resource instance state not found for node "module.route_tables[\"private_route_table\"].aws_route_table.this", instance module.route_tables["private_route_table"].aws_route_table.this
+2024-08-16T13:34:08.427+0300 [DEBUG] ReferenceTransformer: "module.route_tables[\"private_route_table\"].aws_route_table.this" references: []
+2024-08-16T13:34:08.427+0300 [DEBUG] Resource instance state not found for node "module.route_tables[\"public_route_table\"].aws_route_table.this", instance module.route_tables["public_route_table"].aws_route_table.this
+2024-08-16T13:34:08.427+0300 [DEBUG] ReferenceTransformer: "module.route_tables[\"public_route_table\"].aws_route_table.this" references: []
+2024-08-16T13:34:08.427+0300 [DEBUG] refresh: module.route_tables["private_route_table"].aws_route_table.this: no state, so not refreshing
+2024-08-16T13:34:08.427+0300 [DEBUG] refresh: module.route_tables["public_route_table"].aws_route_table.this: no state, so not refreshing
+2024-08-16T13:34:08.428+0300 [DEBUG] Resource instance state not found for node "module.ec2_instances[\"DevInstance1\"].aws_instance.this", instance module.ec2_instances["DevInstance1"].aws_instance.this
+2024-08-16T13:34:08.428+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances[\"DevInstance1\"].aws_instance.this" references: []
+2024-08-16T13:34:08.428+0300 [DEBUG] Resource instance state not found for node "module.ec2_instances[\"ProdInstance2\"].aws_instance.this", instance module.ec2_instances["ProdInstance2"].aws_instance.this
+2024-08-16T13:34:08.428+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances[\"ProdInstance2\"].aws_instance.this" references: []
+2024-08-16T13:34:08.428+0300 [DEBUG] Resource instance state not found for node "module.ec2_instances[\"TestInstance3\"].aws_instance.this", instance module.ec2_instances["TestInstance3"].aws_instance.this
+2024-08-16T13:34:08.428+0300 [DEBUG] ReferenceTransformer: "module.ec2_instances[\"TestInstance3\"].aws_instance.this" references: []
+2024-08-16T13:34:08.428+0300 [DEBUG] refresh: module.ec2_instances["DevInstance1"].aws_instance.this: no state, so not refreshing
+2024-08-16T13:34:08.428+0300 [DEBUG] refresh: module.ec2_instances["ProdInstance2"].aws_instance.this: no state, so not refreshing
+2024-08-16T13:34:08.429+0300 [DEBUG] refresh: module.ec2_instances["TestInstance3"].aws_instance.this: no state, so not refreshing
+2024-08-16T13:34:08.430+0300 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.route_tables["public_route_table"].aws_route_table.this, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .route: planned value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"carrier_gateway_id":cty.StringVal(""), "cidr_block":cty.StringVal("0.0.0.0/0"), "core_network_arn":cty.StringVal(""), "destination_prefix_list_id":cty.StringVal(""), "egress_only_gateway_id":cty.StringVal(""), "gateway_id":cty.UnknownVal(cty.String), "ipv6_cidr_block":cty.StringVal(""), "local_gateway_id":cty.StringVal(""), "nat_gateway_id":cty.StringVal(""), "network_interface_id":cty.StringVal(""), "transit_gateway_id":cty.StringVal(""), "vpc_endpoint_id":cty.StringVal(""), "vpc_peering_connection_id":cty.StringVal("")})}) does not match config value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"carrier_gateway_id":cty.NullVal(cty.String), "cidr_block":cty.StringVal("0.0.0.0/0"), "core_network_arn":cty.NullVal(cty.String), "destination_prefix_list_id":cty.NullVal(cty.String), "egress_only_gateway_id":cty.NullVal(cty.String), "gateway_id":cty.UnknownVal(cty.String), "ipv6_cidr_block":cty.NullVal(cty.String), "local_gateway_id":cty.NullVal(cty.String), "nat_gateway_id":cty.NullVal(cty.String), "network_interface_id":cty.NullVal(cty.String), "transit_gateway_id":cty.NullVal(cty.String), "vpc_endpoint_id":cty.NullVal(cty.String), "vpc_peering_connection_id":cty.NullVal(cty.String)})})
+2024-08-16T13:34:08.430+0300 [DEBUG] provider.terraform-provider-aws_v5.62.0_x5: [DEBUG] setting computed for "vpc_security_group_ids" from ComputedKeys
+2024-08-16T13:34:08.431+0300 [ERROR] vertex "module.route_tables.aws_route_table_association.this (expand)" error: Invalid for_each argument
+2024-08-16T13:34:08.431+0300 [ERROR] vertex "module.route_tables.aws_route_table_association.this (expand)" error: Invalid for_each argument
+2024-08-16T13:34:08.431+0300 [DEBUG] provider.terraform-provider-aws_v5.62.0_x5: [DEBUG] setting computed for "vpc_security_group_ids" from ComputedKeys
+2024-08-16T13:34:08.431+0300 [DEBUG] provider.terraform-provider-aws_v5.62.0_x5: [DEBUG] setting computed for "vpc_security_group_ids" from ComputedKeys
+2024-08-16T13:34:08.435+0300 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.ec2_instances["DevInstance1"].aws_instance.this, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .user_data_replace_on_change: planned value cty.False for a non-computed attribute
+      - .source_dest_check: planned value cty.True for a non-computed attribute
+      - .get_password_data: planned value cty.False for a non-computed attribute
+      - .capacity_reservation_specification: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .cpu_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .maintenance_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .ephemeral_block_device: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .metadata_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .network_interface: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .ebs_block_device: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .enclave_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .instance_market_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .private_dns_name_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .root_block_device: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+2024-08-16T13:34:08.435+0300 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.ec2_instances["ProdInstance2"].aws_instance.this, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .get_password_data: planned value cty.False for a non-computed attribute
+      - .user_data_replace_on_change: planned value cty.False for a non-computed attribute
+      - .source_dest_check: planned value cty.True for a non-computed attribute
+      - .ephemeral_block_device: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .metadata_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .network_interface: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .private_dns_name_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .root_block_device: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .ebs_block_device: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .enclave_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .instance_market_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .maintenance_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .capacity_reservation_specification: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .cpu_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+2024-08-16T13:34:08.435+0300 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.ec2_instances["TestInstance3"].aws_instance.this, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .get_password_data: planned value cty.False for a non-computed attribute
+      - .user_data_replace_on_change: planned value cty.False for a non-computed attribute
+      - .source_dest_check: planned value cty.True for a non-computed attribute
+      - .capacity_reservation_specification: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .cpu_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .maintenance_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .ephemeral_block_device: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .metadata_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .network_interface: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .ebs_block_device: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .enclave_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .instance_market_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .private_dns_name_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .root_block_device: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+2024-08-16T13:34:08.436+0300 [WARN]  Planning encountered errors, so plan is not applyable
+2024-08-16T13:34:08.437+0300 [INFO]  backend/local: plan operation completed
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform planned the following actions, but then encountered a problem:
+
+[1m  # module.ec2_instances["DevInstance1"].aws_instance.this[0m will be created
+[0m  [32m+[0m[0m resource "aws_instance" "this" {
+      [32m+[0m[0m ami                                  = "ami-0ae8f15ae66fe8cda"
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m associate_public_ip_address          = (known after apply)
+      [32m+[0m[0m availability_zone                    = (known after apply)
+      [32m+[0m[0m cpu_core_count                       = (known after apply)
+      [32m+[0m[0m cpu_threads_per_core                 = (known after apply)
+      [32m+[0m[0m disable_api_stop                     = (known after apply)
+      [32m+[0m[0m disable_api_termination              = (known after apply)
+      [32m+[0m[0m ebs_optimized                        = (known after apply)
+      [32m+[0m[0m get_password_data                    = false
+      [32m+[0m[0m host_id                              = (known after apply)
+      [32m+[0m[0m host_resource_group_arn              = (known after apply)
+      [32m+[0m[0m iam_instance_profile                 = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_initiated_shutdown_behavior = (known after apply)
+      [32m+[0m[0m instance_lifecycle                   = (known after apply)
+      [32m+[0m[0m instance_state                       = (known after apply)
+      [32m+[0m[0m instance_type                        = "t2.micro"
+      [32m+[0m[0m ipv6_address_count                   = (known after apply)
+      [32m+[0m[0m ipv6_addresses                       = (known after apply)
+      [32m+[0m[0m key_name                             = (known after apply)
+      [32m+[0m[0m monitoring                           = (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [32m+[0m[0m placement_partition_number           = (known after apply)
+      [32m+[0m[0m primary_network_interface_id         = (known after apply)
+      [32m+[0m[0m private_dns                          = (known after apply)
+      [32m+[0m[0m private_ip                           = (known after apply)
+      [32m+[0m[0m public_dns                           = (known after apply)
+      [32m+[0m[0m public_ip                            = (known after apply)
+      [32m+[0m[0m secondary_private_ips                = (known after apply)
+      [32m+[0m[0m security_groups                      = (known after apply)
+      [32m+[0m[0m source_dest_check                    = true
+      [32m+[0m[0m spot_instance_request_id             = (known after apply)
+      [32m+[0m[0m subnet_id                            = (known after apply)
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "Environment" = "Dev"
+          [32m+[0m[0m "Name"        = "DevInstance1"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "Environment" = "Dev"
+          [32m+[0m[0m "Name"        = "DevInstance1"
+        }
+      [32m+[0m[0m tenancy                              = (known after apply)
+      [32m+[0m[0m user_data                            = (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [32m+[0m[0m user_data_replace_on_change          = false
+      [32m+[0m[0m vpc_security_group_ids               = (known after apply)
+
+      [32m+[0m[0m capacity_reservation_specification (known after apply)
+
+      [32m+[0m[0m cpu_options (known after apply)
+
+      [32m+[0m[0m ebs_block_device (known after apply)
+
+      [32m+[0m[0m enclave_options (known after apply)
+
+      [32m+[0m[0m ephemeral_block_device (known after apply)
+
+      [32m+[0m[0m instance_market_options (known after apply)
+
+      [32m+[0m[0m maintenance_options (known after apply)
+
+      [32m+[0m[0m metadata_options (known after apply)
+
+      [32m+[0m[0m network_interface (known after apply)
+
+      [32m+[0m[0m private_dns_name_options (known after apply)
+
+      [32m+[0m[0m root_block_device (known after apply)
+    }
+
+[1m  # module.ec2_instances["ProdInstance2"].aws_instance.this[0m will be created
+[0m  [32m+[0m[0m resource "aws_instance" "this" {
+      [32m+[0m[0m ami                                  = "ami-0ae8f15ae66fe8cda"
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m associate_public_ip_address          = (known after apply)
+      [32m+[0m[0m availability_zone                    = (known after apply)
+      [32m+[0m[0m cpu_core_count                       = (known after apply)
+      [32m+[0m[0m cpu_threads_per_core                 = (known after apply)
+      [32m+[0m[0m disable_api_stop                     = (known after apply)
+      [32m+[0m[0m disable_api_termination              = (known after apply)
+      [32m+[0m[0m ebs_optimized                        = (known after apply)
+      [32m+[0m[0m get_password_data                    = false
+      [32m+[0m[0m host_id                              = (known after apply)
+      [32m+[0m[0m host_resource_group_arn              = (known after apply)
+      [32m+[0m[0m iam_instance_profile                 = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_initiated_shutdown_behavior = (known after apply)
+      [32m+[0m[0m instance_lifecycle                   = (known after apply)
+      [32m+[0m[0m instance_state                       = (known after apply)
+      [32m+[0m[0m instance_type                        = "t2.medium"
+      [32m+[0m[0m ipv6_address_count                   = (known after apply)
+      [32m+[0m[0m ipv6_addresses                       = (known after apply)
+      [32m+[0m[0m key_name                             = (known after apply)
+      [32m+[0m[0m monitoring                           = (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [32m+[0m[0m placement_partition_number           = (known after apply)
+      [32m+[0m[0m primary_network_interface_id         = (known after apply)
+      [32m+[0m[0m private_dns                          = (known after apply)
+      [32m+[0m[0m private_ip                           = (known after apply)
+      [32m+[0m[0m public_dns                           = (known after apply)
+      [32m+[0m[0m public_ip                            = (known after apply)
+      [32m+[0m[0m secondary_private_ips                = (known after apply)
+      [32m+[0m[0m security_groups                      = (known after apply)
+      [32m+[0m[0m source_dest_check                    = true
+      [32m+[0m[0m spot_instance_request_id             = (known after apply)
+      [32m+[0m[0m subnet_id                            = (known after apply)
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "Environment" = "Prod"
+          [32m+[0m[0m "Name"        = "ProdInstance2"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "Environment" = "Prod"
+          [32m+[0m[0m "Name"        = "ProdInstance2"
+        }
+      [32m+[0m[0m tenancy                              = (known after apply)
+      [32m+[0m[0m user_data                            = (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [32m+[0m[0m user_data_replace_on_change          = false
+      [32m+[0m[0m vpc_security_group_ids               = (known after apply)
+
+      [32m+[0m[0m capacity_reservation_specification (known after apply)
+
+      [32m+[0m[0m cpu_options (known after apply)
+
+      [32m+[0m[0m ebs_block_device (known after apply)
+
+      [32m+[0m[0m enclave_options (known after apply)
+
+      [32m+[0m[0m ephemeral_block_device (known after apply)
+
+      [32m+[0m[0m instance_market_options (known after apply)
+
+      [32m+[0m[0m maintenance_options (known after apply)
+
+      [32m+[0m[0m metadata_options (known after apply)
+
+      [32m+[0m[0m network_interface (known after apply)
+
+      [32m+[0m[0m private_dns_name_options (known after apply)
+
+      [32m+[0m[0m root_block_device (known after apply)
+    }
+
+[1m  # module.ec2_instances["TestInstance3"].aws_instance.this[0m will be created
+[0m  [32m+[0m[0m resource "aws_instance" "this" {
+      [32m+[0m[0m ami                                  = "ami-0ae8f15ae66fe8cda"
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m associate_public_ip_address          = (known after apply)
+      [32m+[0m[0m availability_zone                    = (known after apply)
+      [32m+[0m[0m cpu_core_count                       = (known after apply)
+      [32m+[0m[0m cpu_threads_per_core                 = (known after apply)
+      [32m+[0m[0m disable_api_stop                     = (known after apply)
+      [32m+[0m[0m disable_api_termination              = (known after apply)
+      [32m+[0m[0m ebs_optimized                        = (known after apply)
+      [32m+[0m[0m get_password_data                    = false
+      [32m+[0m[0m host_id                              = (known after apply)
+      [32m+[0m[0m host_resource_group_arn              = (known after apply)
+      [32m+[0m[0m iam_instance_profile                 = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_initiated_shutdown_behavior = (known after apply)
+      [32m+[0m[0m instance_lifecycle                   = (known after apply)
+      [32m+[0m[0m instance_state                       = (known after apply)
+      [32m+[0m[0m instance_type                        = "t2.medium"
+      [32m+[0m[0m ipv6_address_count                   = (known after apply)
+      [32m+[0m[0m ipv6_addresses                       = (known after apply)
+      [32m+[0m[0m key_name                             = (known after apply)
+      [32m+[0m[0m monitoring                           = (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [32m+[0m[0m placement_partition_number           = (known after apply)
+      [32m+[0m[0m primary_network_interface_id         = (known after apply)
+      [32m+[0m[0m private_dns                          = (known after apply)
+      [32m+[0m[0m private_ip                           = (known after apply)
+      [32m+[0m[0m public_dns                           = (known after apply)
+      [32m+[0m[0m public_ip                            = (known after apply)
+      [32m+[0m[0m secondary_private_ips                = (known after apply)
+      [32m+[0m[0m security_groups                      = (known after apply)
+      [32m+[0m[0m source_dest_check                    = true
+      [32m+[0m[0m spot_instance_request_id             = (known after apply)
+      [32m+[0m[0m subnet_id                            = (known after apply)
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "Environment" = "Test"
+          [32m+[0m[0m "Name"        = "TestInstance3"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "Environment" = "Test"
+          [32m+[0m[0m "Name"        = "TestInstance3"
+        }
+      [32m+[0m[0m tenancy                              = (known after apply)
+      [32m+[0m[0m user_data                            = (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [32m+[0m[0m user_data_replace_on_change          = false
+      [32m+[0m[0m vpc_security_group_ids               = (known after apply)
+
+      [32m+[0m[0m capacity_reservation_specification (known after apply)
+
+      [32m+[0m[0m cpu_options (known after apply)
+
+      [32m+[0m[0m ebs_block_device (known after apply)
+
+      [32m+[0m[0m enclave_options (known after apply)
+
+      [32m+[0m[0m ephemeral_block_device (known after apply)
+
+      [32m+[0m[0m instance_market_options (known after apply)
+
+      [32m+[0m[0m maintenance_options (known after apply)
+
+      [32m+[0m[0m metadata_options (known after apply)
+
+      [32m+[0m[0m network_interface (known after apply)
+
+      [32m+[0m[0m private_dns_name_options (known after apply)
+
+      [32m+[0m[0m root_block_device (known after apply)
+    }
+
+[1m  # module.route_tables["private_route_table"].aws_route_table.this[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table" "this" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m owner_id         = (known after apply)
+      [32m+[0m[0m propagating_vgws = (known after apply)
+      [32m+[0m[0m route            = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Name" = "private-rt"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Name" = "private-rt"
+        }
+      [32m+[0m[0m vpc_id           = (known after apply)
+    }
+
+[1m  # module.route_tables["public_route_table"].aws_route_table.this[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table" "this" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m owner_id         = (known after apply)
+      [32m+[0m[0m propagating_vgws = (known after apply)
+      [32m+[0m[0m route            = [
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_block                 = "0.0.0.0/0"
+              [32m+[0m[0m gateway_id                 = (known after apply)
+                [90m# (11 unchanged attributes hidden)[0m[0m
+            },
+        ]
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Name" = "public-rt"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Name" = "public-rt"
+        }
+      [32m+[0m[0m vpc_id           = (known after apply)
+    }
+
+[1m  # module.security_group["allow_tls_ipv4"].aws_security_group.this[0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group" "this" {
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m description            = "Security group for allow_tls_ipv4"
+      [32m+[0m[0m egress                 = [
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_blocks      = [
+                  [32m+[0m[0m "0.0.0.0/0",
+                ]
+              [32m+[0m[0m from_port        = 0
+              [32m+[0m[0m ipv6_cidr_blocks = []
+              [32m+[0m[0m prefix_list_ids  = []
+              [32m+[0m[0m protocol         = "-1"
+              [32m+[0m[0m security_groups  = []
+              [32m+[0m[0m self             = false
+              [32m+[0m[0m to_port          = 0
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ]
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m ingress                = [
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_blocks      = [
+                  [32m+[0m[0m "0.0.0.0/0",
+                ]
+              [32m+[0m[0m from_port        = 22
+              [32m+[0m[0m ipv6_cidr_blocks = []
+              [32m+[0m[0m prefix_list_ids  = []
+              [32m+[0m[0m protocol         = "tcp"
+              [32m+[0m[0m security_groups  = []
+              [32m+[0m[0m self             = false
+              [32m+[0m[0m to_port          = 22
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ]
+      [32m+[0m[0m name                   = "allow_tls_ipv4"
+      [32m+[0m[0m name_prefix            = (known after apply)
+      [32m+[0m[0m owner_id               = (known after apply)
+      [32m+[0m[0m revoke_rules_on_delete = false
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "Name" = "allow_tls_ipv4"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "Name" = "allow_tls_ipv4"
+        }
+      [32m+[0m[0m vpc_id                 = (known after apply)
+    }
+
+[1m  # module.security_group["allow_tls_ipv4-2"].aws_security_group.this[0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group" "this" {
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m description            = "Security group for allow_tls_ipv4-2"
+      [32m+[0m[0m egress                 = [
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_blocks      = [
+                  [32m+[0m[0m "10.0.0.0/16",
+                ]
+              [32m+[0m[0m from_port        = 5432
+              [32m+[0m[0m ipv6_cidr_blocks = []
+              [32m+[0m[0m prefix_list_ids  = []
+              [32m+[0m[0m protocol         = "tcp"
+              [32m+[0m[0m security_groups  = []
+              [32m+[0m[0m self             = false
+              [32m+[0m[0m to_port          = 5432
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ]
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m ingress                = [
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_blocks      = [
+                  [32m+[0m[0m "10.0.0.0/16",
+                ]
+              [32m+[0m[0m from_port        = 5432
+              [32m+[0m[0m ipv6_cidr_blocks = []
+              [32m+[0m[0m prefix_list_ids  = []
+              [32m+[0m[0m protocol         = "tcp"
+              [32m+[0m[0m security_groups  = []
+              [32m+[0m[0m self             = false
+              [32m+[0m[0m to_port          = 5432
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ]
+      [32m+[0m[0m name                   = "allow_tls_ipv4-2"
+      [32m+[0m[0m name_prefix            = (known after apply)
+      [32m+[0m[0m owner_id               = (known after apply)
+      [32m+[0m[0m revoke_rules_on_delete = false
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "Name" = "allow_tls_ipv4-2"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "Name" = "allow_tls_ipv4-2"
+        }
+      [32m+[0m[0m vpc_id                 = (known after apply)
+    }
+
+[1m  # module.subnets["Private-Subnet-1"].aws_subnet.this[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "this" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-east-1a"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.0.101.0/24"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Name" = "Private-Subnet-1"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Name" = "Private-Subnet-1"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # module.subnets["Private-Subnet-2"].aws_subnet.this[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "this" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-east-1b"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.0.102.0/24"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Name" = "Private-Subnet-2"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Name" = "Private-Subnet-2"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # module.subnets["Public-Subnet-1"].aws_subnet.this[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "this" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-east-1a"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.0.1.0/24"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = true
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Name" = "Public-Subnet-1"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Name" = "Public-Subnet-1"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # module.subnets["Public-Subnet-2"].aws_subnet.this[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "this" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-east-1b"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.0.2.0/24"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = true
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Name" = "Public-Subnet-2"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Name" = "Public-Subnet-2"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # module.vpc.aws_internet_gateway.this[0m will be created
+[0m  [32m+[0m[0m resource "aws_internet_gateway" "this" {
+      [32m+[0m[0m arn      = (known after apply)
+      [32m+[0m[0m id       = (known after apply)
+      [32m+[0m[0m owner_id = (known after apply)
+      [32m+[0m[0m tags     = {
+          [32m+[0m[0m "Name" = "ProjVPC-igw"
+        }
+      [32m+[0m[0m tags_all = {
+          [32m+[0m[0m "Name" = "ProjVPC-igw"
+        }
+      [32m+[0m[0m vpc_id   = (known after apply)
+    }
+
+[1m  # module.vpc.aws_vpc.this[0m will be created
+[0m  [32m+[0m[0m resource "aws_vpc" "this" {
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m cidr_block                           = "10.0.0.0/16"
+      [32m+[0m[0m default_network_acl_id               = (known after apply)
+      [32m+[0m[0m default_route_table_id               = (known after apply)
+      [32m+[0m[0m default_security_group_id            = (known after apply)
+      [32m+[0m[0m dhcp_options_id                      = (known after apply)
+      [32m+[0m[0m enable_dns_hostnames                 = true
+      [32m+[0m[0m enable_dns_support                   = true
+      [32m+[0m[0m enable_network_address_usage_metrics = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_tenancy                     = "default"
+      [32m+[0m[0m ipv6_association_id                  = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block                      = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_network_border_group = (known after apply)
+      [32m+[0m[0m main_route_table_id                  = (known after apply)
+      [32m+[0m[0m owner_id                             = (known after apply)
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "Name" = "ProjVPC"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "Name" = "ProjVPC"
+        }
+    }
+
+[1mPlan:[0m 13 to add, 0 to change, 0 to destroy.
+[0m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mInvalid for_each argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on terraform-modules/route_table_module/main.tf line 20, in resource "aws_route_table_association" "this":
+[31m│[0m [0m  20:   for_each = [4mtoset(var.subnet_ids)[0m[0m
+[31m│[0m [0m    [90m├────────────────[0m
+[31m│[0m [0m[0m    [90m│[0m [1mvar.subnet_ids[0m is list of string with 2 elements
+[31m│[0m [0m[0m
+[31m│[0m [0mThe "for_each" set includes values derived from resource attributes that
+[31m│[0m [0mcannot be determined until apply, and so Terraform cannot determine the
+[31m│[0m [0mfull set of keys that will identify the instances of this resource.
+[31m│[0m [0m
+[31m│[0m [0mWhen working with unknown values in for_each, it's better to use a map
+[31m│[0m [0mvalue where the keys are defined statically in your configuration and where
+[31m│[0m [0monly the values contain apply-time results.
+[31m│[0m [0m
+[31m│[0m [0mAlternatively, you could use the -target planning option to first apply
+[31m│[0m [0monly the resources that the for_each value depends on, and then apply a
+[31m│[0m [0msecond time to fully converge.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mInvalid for_each argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on terraform-modules/route_table_module/main.tf line 20, in resource "aws_route_table_association" "this":
+[31m│[0m [0m  20:   for_each = [4mtoset(var.subnet_ids)[0m[0m
+[31m│[0m [0m    [90m├────────────────[0m
+[31m│[0m [0m[0m    [90m│[0m [1mvar.subnet_ids[0m is list of string with 2 elements
+[31m│[0m [0m[0m
+[31m│[0m [0mThe "for_each" set includes values derived from resource attributes that
+[31m│[0m [0mcannot be determined until apply, and so Terraform cannot determine the
+[31m│[0m [0mfull set of keys that will identify the instances of this resource.
+[31m│[0m [0m
+[31m│[0m [0mWhen working with unknown values in for_each, it's better to use a map
+[31m│[0m [0mvalue where the keys are defined statically in your configuration and where
+[31m│[0m [0monly the values contain apply-time results.
+[31m│[0m [0m
+[31m│[0m [0mAlternatively, you could use the -target planning option to first apply
+[31m│[0m [0monly the resources that the for_each value depends on, and then apply a
+[31m│[0m [0msecond time to fully converge.
+[31m╵[0m[0m
+2024-08-16T13:34:08.484+0300 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-08-16T13:34:08.496+0300 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/hashicorp/aws/5.62.0/linux_amd64/terraform-provider-aws_v5.62.0_x5 id=3373
+2024-08-16T13:34:08.497+0300 [DEBUG] provider: plugin exited
